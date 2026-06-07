@@ -22,6 +22,13 @@ contadores[0].textContent = calculaTempo(tempoObjetivo1);
 function calculaTempo(tempoObjetivo) {
   let tempoAtual = new Date();
   let tempoFinal = tempoObjetivo - tempoAtual;
-  let segundos = tempoFinal/1000;
-  return segundos;
+  let segundos = Math.Floor(tempoFinal/1000);
+  let minutos = Math.Floor (segundos/60);
+  let horas = Math.Floor (minutos/60);
+  let dia = Math.Floor (horas/24);
+
+  segundos %= 60;
+  minutos %= 60;
+  horas %= 24;
+  return dias +" dias " + horas + " horas " + minutos +" minutos " + segundos + " segundos " ;
 }
